@@ -1,0 +1,14 @@
+{
+    "name": "opengeekv2/wordpress-web-pure-data",
+    "description": "Plugin to upload, show and run Web Pure Data compatible Pure Data programs in Wordpress sites",
+    "type": "wordpress-plugin",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Marc Mauri Alloza",
+            "email": "marcmaurialloza@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {}
+}
