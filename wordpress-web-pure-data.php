@@ -18,4 +18,4 @@
  * Domain Path:       /languages
  */
 
-define('WPWPD_DEMO_VERSION', '1.0.0');
+define( 'WPWPD_DEMO_VERSION', '1.0.0' );
