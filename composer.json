@@ -9,5 +9,8 @@
             "email": "marcmaurialloza@gmail.com"
         }
     ],
-    "minimum-stability": "stable"
+    "minimum-stability": "stable",
+    "require-dev": {
+        "nyholm/noop": "1.0.0"
+    }
 }
