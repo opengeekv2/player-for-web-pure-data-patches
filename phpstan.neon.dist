@@ -9,9 +9,9 @@ includes:
 parameters:
     level: 1
     inferPrivatePropertyTypeFromConstructor: true
-#    bootstrapFiles:
+    bootstrapFiles:
 #        # Missing constants, function and class stubs
-#        - %currentWorkingDirectory%/tests/phpstan/bootstrap.php
+        - %currentWorkingDirectory%/tests/bootstrap.php
 #    scanFiles:
 #        # Plugin stubs
 #        - %currentWorkingDirectory%/tests/phpstan/PLUGIN-stubs.php
