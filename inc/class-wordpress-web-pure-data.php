@@ -1,7 +1,7 @@
 <?php
 /**
  * Main plugin class
- * 
+ *
  * @package WPWPD
  */
 
@@ -9,7 +9,7 @@ namespace WPWPD;
 
 /**
  * Main plugin class
- * 
+ *
  * @package WPWPD
  */
 class WordPress_Web_Pure_Data {
@@ -23,7 +23,7 @@ class WordPress_Web_Pure_Data {
 
 	/**
 	 * Adds Pd Mime Type to set of uploadable Mime Types
-	 * 
+	 *
 	 * @param string[] $mime_types Array of regexp (key) and mime types (value) provided by WordPress.
 	 *
 	 * @return string[]
