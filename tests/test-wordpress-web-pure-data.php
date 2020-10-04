@@ -29,7 +29,6 @@ class WordPress_Web_Pure_Data_Test extends WP_UnitTestCase {
 	 * Test add Pure Data Mime Type.
 	 */
 	public function test_render_pod_shorcode() {
-		$template = 
 		$mime_types['html']      = 'text/html';
 		$wordpress_web_pure_data = new WordPress_Web_Pure_Data();
 
@@ -43,11 +42,11 @@ class WordPress_Web_Pure_Data_Test extends WP_UnitTestCase {
 	 * Test PD shortcode render.
 	 */
 	public function test_render_pd_shortcode() {
-		$url = 'https://google.com';
-		$template = "<script>window.addEventListener('DOMContentLoaded', function () { fetch('{$url}').then(function (response) { return response.text(); }).then(function (data) { var patch = Pd.loadPatch(data); Pd.start(); }); }, false);</script>";
+		$url                     = 'https://google.com';
+		$template                = "<script>window.addEventListener('DOMContentLoaded', function () { fetch('{$url}').then(function (response) { return response.text(); }).then(function (data) { var patch = Pd.loadPatch(data); Pd.start(); }); }, false);</script>";
 		$wordpress_web_pure_data = new WordPress_Web_Pure_Data();
 
-		$rendered_shortcode = $wordpress_web_pure_data->render_pd_shortcode( array( 'patch' => $url) );
+		$rendered_shortcode = $wordpress_web_pure_data->render_pd_shortcode( array( 'patch' => $url ) );
 
 		$this->assertEquals( $template, $rendered_shortcode );
 	}
