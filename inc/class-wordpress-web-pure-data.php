@@ -20,7 +20,7 @@ class WordPress_Web_Pure_Data {
 	public function __construct() {
 		wp_register_script( 'webpd', plugin_dir_url( __DIR__ ) . 'assets/js/webpd-latest.min.js', array(), '0.3.1', true );
 		add_filter( 'upload_mimes', array( $this, 'add_pd_mime_type' ) );
-		add_shortcode( 'pd', array( $this, 'pd_shortcode_render' ) );
+		add_shortcode( 'pd', array( $this, 'render_pd_shortcode' ) );
 	}
 
 	/**
@@ -45,11 +45,11 @@ class WordPress_Web_Pure_Data {
 	 *
 	 * @return string
 	 */
-	public function pd_shortcode_render( $atts = array(), $content = null, $tag = '' ) {
+	public function render_pd_shortcode( $atts = array(), $content = null, $tag = '' ) {
 		$atts = array_change_key_case( (array) $atts, CASE_LOWER );
 
 		/**
-		 * Var pd_atts type
+		 * Varpd_atts type
 		 *
 		 * @var string[]
 		 */
@@ -62,7 +62,7 @@ class WordPress_Web_Pure_Data {
 		);
 
 		wp_enqueue_script( 'webpd' );
-		$output = '<script>window.addEventListener("DOMContentLoaded", function () { fetch("' . $pd_atts['patch'] . '").then(function (response) { return response.text(); }).then(function (data) { var patch = Pd.loadPatch(data); Pd.start(); }); }, false);</script>';
+		$output = "<script>window.addEventListener('DOMContentLoaded', function () { fetch('{$pd_atts['patch']}').then(function (response) { return response.text(); }).then(function (data) { var patch = Pd.loadPatch(data); Pd.start(); }); }, false);</script>";
 
 		// enclosing tags.
 		if ( ! is_null( $content ) ) {
