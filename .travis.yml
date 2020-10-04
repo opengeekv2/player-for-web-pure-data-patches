@@ -27,7 +27,7 @@ matrix:
     - php: 7.2
       env: WP_TRAVISCI=phpstan
     - php: 7.2
-      env: WP_TRAVISCI=psalm WP_VERSION=latest
+      env: WP_TRAVISCI=psalm
     - php: 7.1
       env: WP_VERSION=latest
     - php: 7.0
@@ -83,5 +83,5 @@ script:
     fi
   - |
     if [[ "$WP_TRAVISCI" == "psalm" ]] ; then
-      psalm --stats --debug-by-line
+      psalm --stats
     fi
