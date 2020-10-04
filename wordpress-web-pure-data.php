@@ -9,11 +9,11 @@
  * Plugin URI:        https://github.com/opengeekv2/wordpress-web-pure-data
  * Description:       Plugin to upload, show and run Web Pure Data compatible Pure Data programs in WordPress sites.
  * Version:           0.0.1
- * Requires at least: 5.5
+ * Requires at least: 5.2
  * Requires PHP:      5.6
  * Author:            Marc Mauri Alloza
  * Author URI:        https://github.com/opengeekv2
- * License:           MIT
+ * License:           LGPL-3.0-or-later
  * License URI:       https://opensource.org/licenses/MIT
  * Text Domain:       wpwpd
  * Domain Path:       /languages
