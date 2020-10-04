@@ -27,7 +27,7 @@ matrix:
     - php: 7.2
       env: WP_TRAVISCI=phpstan
     - php: 7.2
-      env: WP_TRAVISCI=psalm
+      env: WP_TRAVISCI=psalm WP_VERSION=latest
     - php: 7.1
       env: WP_VERSION=latest
     - php: 7.0
