@@ -13,7 +13,7 @@
  * Requires PHP:      5.6
  * Author:            Marc Mauri Alloza
  * Author URI:        https://github.com/opengeekv2
- * License:           LGPL-3.0-or-later
+ * License:           LGPL-2.1-or-later
  * License URI:       https://opensource.org/licenses/MIT
  * Text Domain:       wpwpd
  * Domain Path:       /languages
