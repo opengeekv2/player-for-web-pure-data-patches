@@ -21,6 +21,7 @@ require_once $wpwpd_tests_dir . '/includes/functions.php';
 
 /**
  * Manually load the plugin being tested.
+ *
  * @return void
  */
 function wpwpd_manually_load_plugin() {
