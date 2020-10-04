@@ -12,5 +12,8 @@
     "minimum-stability": "stable",
     "require-dev": {
         "nyholm/noop": "1.0.0"
+    },
+    "autoload": {
+        "psr-4": {"WordPressWebPureData\\": "inc/"}
     }
 }
