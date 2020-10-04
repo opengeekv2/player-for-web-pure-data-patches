@@ -2,8 +2,9 @@
 /**
  * Plugin entrypoint
  *
- * @package WordPress
+ * @package WordPressWebPureData
  *
+ * @wordpress-plugin
  * Plugin Name:       WordPress Web Pure Data
  * Plugin URI:        https://github.com/opengeekv2/wordpress-web-pure-data
  * Description:       Plugin to upload, show and run Web Pure Data compatible Pure Data programs in WordPress sites.
@@ -18,4 +19,11 @@
  * Domain Path:       /languages
  */
 
-define( 'WPWPD_DEMO_VERSION', '1.0.0' );
+/**
+ * Autoloading plugin clases and dependencies
+ */
+require 'vendor/autoload.php';
+
+use WordPressWebPureData\WordPressWebPureData;
+
+new WordPressWebPureData();
