@@ -9,9 +9,9 @@ includes:
 parameters:
     level: 1
     inferPrivatePropertyTypeFromConstructor: true
-    bootstrapFiles:
+#    bootstrapFiles:
 #        # Missing constants, function and class stubs
-        - %currentWorkingDirectory%/tests/bootstrap.php
+#        - %currentWorkingDirectory%/tests/phpstan/bootstrap.php
 #    scanFiles:
 #        # Plugin stubs
 #        - %currentWorkingDirectory%/tests/phpstan/PLUGIN-stubs.php
@@ -21,6 +21,8 @@ parameters:
 #        - %currentWorkingDirectory%/inc/
     paths:
         - %currentWorkingDirectory%
+    excludes_analyse:
+        - %currentWorkingDirectory%/tests/
     ignoreErrors:
         # Uses func_get_args()
         - '#^Function apply_filters(_ref_array)? invoked with [34567] parameters, 2 required\.$#'
