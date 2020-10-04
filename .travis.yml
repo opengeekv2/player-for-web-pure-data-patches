@@ -24,6 +24,8 @@ matrix:
       env: WP_VERSION=latest
     - php: 7.2
       env: WP_VERSION=latest
+    - php: 7.2
+      env: WP_TRAVISCI=phpstan
     - php: 7.1
       env: WP_VERSION=latest
     - php: 7.0
@@ -52,6 +54,10 @@ before_script:
     if [[ "$WP_TRAVISCI" == "phpcs" ]] ; then
       composer global require --dev dealerdirect/phpcodesniffer-composer-installer:^0.6 phpcompatibility/phpcompatibility-wp:* wp-coding-standards/wpcs:* automattic/vipwpcs:*
     fi
+  - |
+    if [[ "$WP_TRAVISCI" == "phpstan" ]] ; then
+      composer global require --dev phpstan/phpstan:* szepeviktor/phpstan-wordpress:*
+    fi
 
 script:
   - |
@@ -62,4 +68,8 @@ script:
   - |
     if [[ "$WP_TRAVISCI" == "phpcs" ]] ; then
       phpcs
+    fi
+  - |
+    if [[ "$WP_TRAVISCI" == "phpstan" ]] ; then
+      phpstan analyze
     fi

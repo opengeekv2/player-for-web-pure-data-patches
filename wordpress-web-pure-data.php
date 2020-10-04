@@ -10,7 +10,7 @@
  * Version:           0.0.1
  * Requires at least: 5.5
  * Requires PHP:      5.6
- * Author:            Marc Mauri ALloza
+ * Author:            Marc Mauri Alloza
  * Author URI:        https://github.com/opengeekv2
  * License:           MIT
  * License URI:       https://opensource.org/licenses/MIT
