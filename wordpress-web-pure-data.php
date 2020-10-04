@@ -24,6 +24,6 @@
  */
 require 'vendor/autoload.php';
 
-use WordPressWebPureData\WordPressWebPureData;
+use WPWPD\WordPress_Web_Pure_Data;
 
-new WordPressWebPureData();
+new WordPress_Web_Pure_Data();

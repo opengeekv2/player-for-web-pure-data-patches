@@ -14,6 +14,6 @@
         "nyholm/noop": "1.0.0"
     },
     "autoload": {
-        "psr-4": {"WordPressWebPureData\\": "inc/"}
+        "psr-4": {"WPWPD\\": "inc/"}
     }
 }
