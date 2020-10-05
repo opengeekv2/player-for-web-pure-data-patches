@@ -27,3 +27,5 @@ node_modules/
 tests_installed*
 
 dist
+
+*.zip
