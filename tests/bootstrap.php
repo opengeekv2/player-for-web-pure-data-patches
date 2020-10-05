@@ -25,7 +25,7 @@ require_once $wpwpd_tests_dir . '/includes/functions.php';
  * @return void
  */
 function wpwpd_manually_load_plugin() {
-	require dirname( dirname( __FILE__ ) ) . '/wordpress-web-pure-data.php';
+	require dirname( dirname( __FILE__ ) ) . '/web-pure-data.php';
 }
 tests_add_filter( 'muplugins_loaded', 'wpwpd_manually_load_plugin' );
 

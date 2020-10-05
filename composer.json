@@ -1,5 +1,5 @@
 {
-    "name": "opengeekv2/wordpress-web-pure-data",
+    "name": "wpackagist-plugin/web-pure-data",
     "description": "Plugin to upload, show and run Web Pure Data compatible Pure Data programs in Wordpress sites",
     "version": "1.0.0",
     "type": "wordpress-plugin",

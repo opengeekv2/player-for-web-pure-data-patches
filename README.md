@@ -11,7 +11,7 @@ You can install it by uploading the plugin zip in Plugins > Add New > Upload Plu
 
 This plugin allows you to upload Pure Data patches with the .pd extension in Media > Add New.
 
-After that you can use the Shortcode [pd path="put_uploaded_patch_url_here"] to run that patch in a post or page.
+After that you can use the Shortcode [pd patch="put_uploaded_patch_url_here"] to run that patch in a post or page.
 
 If you're building a theme you can also run the shortcdode using the [do_shortcode()](https://developer.wordpress.org/reference/functions/do_shortcode/) function.
 
