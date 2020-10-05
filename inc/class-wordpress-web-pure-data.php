@@ -18,7 +18,7 @@ class WordPress_Web_Pure_Data {
 	 * Construct
 	 */
 	public function __construct() {
-		wp_register_script( 'webpd', plugin_dir_url( __DIR__ ) . 'assets/js/webpd-latest.min.js', array(), '0.3.1', true );
+		wp_register_script( 'webpd', plugin_dir_url( __DIR__ ) . 'dist/js/webpd-latest.min.js', array(), '0.3.1', true );
 		add_filter( 'upload_mimes', array( $this, 'add_pd_mime_type' ) );
 		add_shortcode( 'pd', array( $this, 'render_pd_shortcode' ) );
 	}

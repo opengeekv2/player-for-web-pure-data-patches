@@ -9,5 +9,11 @@
   "private": true,
   "dependencies": {
     "webpd": "^0.4.2"
+  },
+  "devDependencies": {
+    "gulp": "^4.0.2"
+  },
+  "scripts": {
+    "start": "gulp"
   }
 }
