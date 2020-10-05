@@ -1,12 +1,12 @@
-=== Web Pure Data ===
-Contributors: opengeekv2
-Tags: music, pd
-Requires at least: 5.2
-Tested up to: 5.5
-Stable tag: 1.0.0
-Requires PHP: 5.6
-License: LGPLv3 or later
-License URI: https://www.gnu.org/licenses/lgpl-3.0.en.html
+# Web Pure Data
+* Contributors: opengeekv2
+* Tags: music, pd
+* Requires at least: 5.2
+* Tested up to: 5.5
+* Stable tag: 1.0.0
+* Requires PHP: 5.6
+* License: LGPLv3 or later
+* License URI: https://www.gnu.org/licenses/lgpl-3.0.en.html
 
 Plugin to upload, show and run Web Pure Data compatible Pure Data patches in WordPress sites.
 
@@ -34,7 +34,11 @@ The [WebPd](https://github.com/sebpiq/WebPd) Javascript library does not support
 
 ## Screenshots
 
-There's no screenshots.
+1. There's no screenshots.
+
+## Upgrade Notice
+
+This plugin has no upgrades
 
 ## Changelog
 
