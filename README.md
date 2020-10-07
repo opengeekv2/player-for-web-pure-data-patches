@@ -8,7 +8,7 @@
 * License: LGPLv3 or later
 * License URI: https://www.gnu.org/licenses/lgpl-3.0.en.html
 
-Plugin to upload, show and run Web Pure Data compatible Pure Data patches in WordPress sites.
+Plugin to upload and run Web Pure Data compatible Pure Data patches in WordPress sites.
 
 ## Installation
 
