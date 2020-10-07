@@ -5,9 +5,9 @@
  * @package WordPressWebPureData
  *
  * @wordpress-plugin
- * Plugin Name:       Web Pure Data
- * Plugin URI:        https://github.com/opengeekv2/wordpress-web-pure-data
- * Description:       Plugin to upload, show and run Web Pure Data compatible Pure Data programs in WordPress sites.
+ * Plugin Name:       Player for Web Pure Data patches
+ * Plugin URI:        https://github.com/opengeekv2/player-for-web-pure-data-patches
+ * Description:       Plugin to upload and run Web Pure Data compatible Pure Data programs in WordPress sites.
  * Version:           1.0.0
  * Requires at least: 5.2
  * Requires PHP:      5.6
@@ -15,7 +15,7 @@
  * Author URI:        https://github.com/opengeekv2
  * License:           LGPL-2.1-or-later
  * License URI:       https://opensource.org/licenses/MIT
- * Text Domain:       wpwpd
+ * Text Domain:       p4wpdp
  * Domain Path:       /languages
  */
 
@@ -24,6 +24,6 @@
  */
 require 'vendor/autoload.php';
 
-use WPWPD\WordPress_Web_Pure_Data;
+use P4WPDP\Player_For_Web_Pure_Data_Patches;
 
-new WordPress_Web_Pure_Data();
+new Player_For_Web_Pure_Data_Patches();

@@ -1,9 +1,9 @@
 {
-  "name": "wordpress-web-pure-data",
+  "name": "player-for-web-pure-data-patches",
   "version": "1.0.0",
   "description": "Plugin to upload, show and run Web Pure Data compatible Pure Data programs in WordPress sites.",
   "main": "index.js",
-  "repository": "git@github.com:opengeekv2/wordpress-web-pure-data.git",
+  "repository": "git@github.com:opengeekv2/player-for-web-pure-data-patches.git",
   "author": "Marc Mauri Alloza <marcmaurialloza@gmail.com>",
   "license": "LGPL-3-or-later",
   "private": true,

@@ -1,6 +1,6 @@
-# Web Pure Data
+# Player for Web Pure Data patches
 * Contributors: opengeekv2
-* Tags: music, pd
+* Tags: music, pd, synth, player
 * Requires at least: 5.2
 * Tested up to: 5.5
 * Stable tag: 1.0.0
@@ -42,13 +42,13 @@ This plugin has no upgrades
 
 ## Changelog
 
-### 1.0.0
+### 1.0.0 - Audaacious Abs
 * Allow .pd files to be uploaded in media.
 * Provide "pd" shortcode.
 
 ## Build status
 
-[![Build Status](https://travis-ci.com/opengeekv2/wordpress-web-pure-data.svg?branch=main)](https://travis-ci.com/opengeekv2/wordpress-web-pure-data)
+[![Build Status](https://travis-ci.com/opengeekv2/player-for-web-pure-data-patches.svg?branch=main)](https://travis-ci.com/opengeekv2/player-for-web-pure-data-patches)
 
 ## Included libraries
 
@@ -58,4 +58,4 @@ You can get the source code of the WebPd Javascript library from its [GitHub rep
 
 ## License
 
-This plugin is released under [LGPL-3-or-later](https://github.com/opengeekv2/wordpress-web-pure-data/blob/main/LICENSE) license.
+This plugin is released under [LGPL-3-or-later](https://github.com/opengeekv2/player-for-web-pure-data-patches/blob/main/LICENSE) license.

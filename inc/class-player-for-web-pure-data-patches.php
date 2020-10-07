@@ -2,17 +2,17 @@
 /**
  * Main plugin class
  *
- * @package WPWPD
+ * @package P4WPDP
  */
 
-namespace WPWPD;
+namespace P4WPDP;
 
 /**
  * Main plugin class
  *
- * @package WPWPD
+ * @package P4WPDP
  */
-class WordPress_Web_Pure_Data {
+class Player_For_Web_Pure_Data_Patches {
 
 	/**
 	 * Construct

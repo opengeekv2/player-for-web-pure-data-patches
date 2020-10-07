@@ -1,5 +1,5 @@
 web-pure-data.zip:
-	cd ../../../.. && make composer-install-plugin-wordpress-web-pure-data-for-deploy
+	cd ../../../.. && make composer-install-plugin-player-for-web-pure-data-patches-for-deploy
 	yarn install
 	yarn start
-	zip -r web-pure-data.zip dist inc vendor composer.json LICENSE README.md web-pure-data.php
+	zip -r player-for-web-pure-data-patches.zip dist inc vendor composer.json LICENSE README.md web-pure-data.php
