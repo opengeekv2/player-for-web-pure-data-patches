@@ -42,7 +42,7 @@ This plugin has no upgrades
 
 ## Changelog
 
-### 1.0.0 - Audaacious Abs
+### 1.0.0 - Audacious Abs
 * Allow .pd files to be uploaded in media.
 * Provide "pd" shortcode.
 
