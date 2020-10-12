@@ -48,8 +48,8 @@ This plugin has no upgrades
 
 ## Build status
 
-![ci](https://github.com/Runroom/opengeekv2/player-for-web-pure-data-patches/ci/badge.svg?branch=development)
-![qa](https://github.com/Runroom/opengeekv2/player-for-web-pure-data-patches/qa/badge.svg?branch=development)
+![ci](https://github.com/Runroom/opengeekv2/player-for-web-pure-data-patches/ci/badge.svg)
+![qa](https://github.com/Runroom/opengeekv2/player-for-web-pure-data-patches/qa/badge.svg)
 
 ## Included libraries
 
