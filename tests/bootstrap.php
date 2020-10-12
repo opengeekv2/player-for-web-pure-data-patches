@@ -5,8 +5,6 @@
  * @package Wordpress_Web_Pure_Data
  */
 
-define('DB_HOST', 'mysql');
-
 $p4wpdp_tests_dir = getenv( 'WP_TESTS_DIR' );
 
 if ( ! $p4wpdp_tests_dir ) {
