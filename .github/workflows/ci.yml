@@ -6,7 +6,7 @@ on:
   pull_request:
 
 jobs:
-  runner-job:
+  build:
     runs-on: ubuntu-latest
     continue-on-error: ${{ matrix.allowed_to_fail }}
     strategy:
