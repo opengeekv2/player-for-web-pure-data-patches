@@ -55,10 +55,10 @@ This plugin has no upgrades
 
 ## Included libraries
 
-This plugin makes use of [WebPd](https://github.com/sebpiq/WebPd) Javascript library released under [LGPL-3-or-later](https://github.com/sebpiq/WebPd/blob/master/COPYING.LESSER) license.
+This plugin makes use of [WebPd](https://github.com/sebpiq/WebPd) Javascript library released under [LGPL-3.0-or-later](https://github.com/sebpiq/WebPd/blob/master/COPYING.LESSER) license.
 
 You can get the source code of the WebPd Javascript library from its [GitHub repository](https://github.com/sebpiq/WebPd).
 
 ## License
 
-This plugin is released under [LGPL-3-or-later](https://github.com/opengeekv2/player-for-web-pure-data-patches/blob/main/LICENSE) license.
+This plugin is released under [LGPL-3.0-or-later](https://github.com/opengeekv2/player-for-web-pure-data-patches/blob/main/LICENSE) license.
