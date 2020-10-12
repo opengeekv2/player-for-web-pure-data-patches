@@ -56,5 +56,5 @@ jobs:
       - run: composer global require "phpunit/phpunit=4.8.*|5.7.*"
       - run: composer install
       - run: phpunit --coverage-clover=clover.xml
-      - run: WP_MULTISITE=1 phpunit
+      - run: WP_MULTISITE=1 phpunit --coverage-clover=clover.xml
       - uses: codecov/codecov-action@v1
