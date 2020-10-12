@@ -33,6 +33,15 @@ jobs:
           - php: '7.4'
             wp-version: latest
             allowed_to_fail: false
+    services:
+      mysql:
+        mysql:
+            image: mysql:5.7
+            env:
+                MYSQL_ALLOW_EMPTY_PASSWORD: yes
+            ports:
+                - 3306
+            options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
     steps:
       - uses: actions/checkout@v2
       - uses: shivammathur/setup-php@v2
@@ -42,7 +51,7 @@ jobs:
           tools: composer:v1
       - run: export VENDOR="$HOME/.composer/vendor"
       - run: export PATH="$VENDOR/bin:$PATH"
-      - run: bash bin/install-wp-tests.sh wordpress_test root '' localhost ${{ matrix.wp-version }}
+      - run: bash bin/install-wp-tests.sh wordpress_test root '' mysql ${{ matrix.wp-version }}
       - run: composer global require "phpunit/phpunit=4.8.*|5.7.*"
       - run: composer install
       - run: phpunit
