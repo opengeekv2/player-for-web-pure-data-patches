@@ -50,6 +50,7 @@ This plugin has no upgrades
 
 ![ci](https://github.com/opengeekv2/player-for-web-pure-data-patches/workflows/ci/badge.svg)
 ![qa](https://github.com/opengeekv2/player-for-web-pure-data-patches/workflows/qa/badge.svg)
+[![codecov](https://codecov.io/gh/opengeekv2/player-for-web-pure-data-patches/branch/development/graph/badge.svg)](https://codecov.io/gh/opengeekv2/player-for-web-pure-data-patches)
 
 ## Included libraries
 
