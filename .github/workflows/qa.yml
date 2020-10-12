@@ -21,9 +21,13 @@ jobs:
           coverage: none
           tools: cs2pr,composer:v1
       - if: ${{ matrix.php == '5.6' }}
-        run: composer global require --dev dealerdirect/phpcodesniffer-composer-installer:^0.6 phpcompatibility/phpcompatibility-wp:* wp-coding-standards/wpcs:* automattic/vipwpcs:* 
+        run: composer global require --dev dealerdirect/phpcodesniffer-composer-installer:^0.6 phpcompatibility/phpcompatibility-wp:* wp-coding-standards/wpcs:* automattic/vipwpcs:* ergebnis/composer-normalize 
       - if: ${{ matrix.php == '5.6' }}
         run: phpcs --report=checkstyle -q . | cs2pr
+      - if: ${{ matrix.php == '5.6' }}
+        run: composer normalize --no-update-lock --dry-run --diff
+      - if: ${{ matrix.php == '5.6' }}
+        run: composer validate --strict
       - if: ${{ matrix.php == '7.2' }}
         run: composer global require --dev phpstan/phpstan:* szepeviktor/phpstan-wordpress:* vimeo/psalm:* humanmade/psalm-plugin-wordpress:*
       - if: ${{ matrix.php == '7.2' }}
