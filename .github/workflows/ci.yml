@@ -17,16 +17,22 @@ jobs:
         include:
           - php: '5.6'
             wp-version: latest
+            allowed_to_fail: [false]
           - php: '7.0'
             wp-version: latest
+            allowed_to_fail: [false]
           - php: '7.1'
             wp-version: latest
+            allowed_to_fail: [false]
           - php: '7.2'
             wp-version: latest
+            allowed_to_fail: [false]
           - php: '7.3'
             wp-version: latest
+            allowed_to_fail: [false]
           - php: '7.4'
             wp-version: latest
+            allowed_to_fail: [false]
     steps:
       - uses: actions/checkout@v2
       - uses: shivammathur/setup-php@v2
