@@ -6,7 +6,7 @@ on:
   pull_request:
 
 jobs:
-  build:
+  runner-job:
     runs-on: ubuntu-latest
     continue-on-error: ${{ matrix.allowed_to_fail }}
     strategy:
@@ -50,7 +50,7 @@ jobs:
           tools: composer:v1
       - run: export VENDOR="$HOME/.composer/vendor"
       - run: export PATH="$VENDOR/bin:$PATH"
-      - run: bash bin/install-wp-tests.sh wordpress_test root '' mysql ${{ matrix.wp-version }}
+      - run: bash bin/install-wp-tests.sh wordpress_test root '' localhost ${{ matrix.wp-version }}
       - run: composer global require "phpunit/phpunit=4.8.*|5.7.*"
       - run: composer install
       - run: phpunit
