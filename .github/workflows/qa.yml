@@ -31,6 +31,8 @@ jobs:
       - if: ${{ matrix.php == '7.2' }}
         run: composer install
       - if: ${{ matrix.php == '7.2' }}
+        run: sed "s/vendor\/szepeviktor\/phpstan-wordpress\/extension.neon/$HOME\/vendor\/szepeviktor\/phpstan-wordpress\/extension.neon/g"
+      - if: ${{ matrix.php == '7.2' }}
         run: phpstan analyze
       - if: ${{ matrix.php == '7.2' }}
         run: psalm --stats
