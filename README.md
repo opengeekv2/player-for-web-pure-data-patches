@@ -48,7 +48,8 @@ This plugin has no upgrades
 
 ## Build status
 
-[![Build Status](https://travis-ci.com/opengeekv2/player-for-web-pure-data-patches.svg?branch=main)](https://travis-ci.com/opengeekv2/player-for-web-pure-data-patches)
+![ci](https://github.com/Runroom/opengeekv2/player-for-web-pure-data-patches/ci/badge.svg?branch=development)
+![qa](https://github.com/Runroom/opengeekv2/player-for-web-pure-data-patches/qa/badge.svg?branch=development)
 
 ## Included libraries
 
