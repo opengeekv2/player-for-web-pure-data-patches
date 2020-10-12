@@ -33,4 +33,4 @@ jobs:
       - if: ${{ matrix.php == '7.2' }}
         run: phpstan analyze
       - if: ${{ matrix.php == '7.2' }}
-        run: psalm --stats -- --threads=$(nproc) --output-format=github --shepherd
+        run: psalm --stats --threads=$(nproc) --output-format=github --shepherd
