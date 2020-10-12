@@ -29,3 +29,9 @@ tests_installed*
 dist
 
 *.zip
+
+#svn
+.svn
+/trunk
+/tags
+/branches

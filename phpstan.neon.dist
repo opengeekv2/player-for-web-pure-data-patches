@@ -5,7 +5,7 @@ includes:
     # @see https://github.com/phpstan/phpstan-src/blob/master/conf/bleedingEdge.neon
     - phar://phpstan.phar/conf/bleedingEdge.neon
     # Include this extension
-    - /home/travis/.composer/vendor/szepeviktor/phpstan-wordpress/extension.neon
+    - vendor/szepeviktor/phpstan-wordpress/extension.neon
 parameters:
     level: 1
     inferPrivatePropertyTypeFromConstructor: true
