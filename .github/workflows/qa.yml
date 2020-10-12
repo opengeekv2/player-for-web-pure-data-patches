@@ -35,6 +35,6 @@ jobs:
       - if: ${{ matrix.php == '7.2' }}
         run: psalm --stats --threads=$(nproc) --output-format=github --shepherd
       - if: ${{ matrix.php == '7.2' }}
-        run: composer-normalize --no-update-lock --dry-run --diff
+        run: composer normalize --no-update-lock --dry-run --diff
       - if: ${{ matrix.php == '7.2' }}
         run: composer validate --strict
