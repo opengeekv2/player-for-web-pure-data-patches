@@ -50,7 +50,7 @@ This plugin has no upgrades
 
 ![ci](https://github.com/opengeekv2/player-for-web-pure-data-patches/workflows/ci/badge.svg)
 ![qa](https://github.com/opengeekv2/player-for-web-pure-data-patches/workflows/qa/badge.svg)
-[![codecov](https://codecov.io/gh/opengeekv2/player-for-web-pure-data-patches/branch/development/graph/badge.svg)](https://codecov.io/gh/opengeekv2/player-for-web-pure-data-patches)
+[![codecov](https://codecov.io/gh/opengeekv2/player-for-web-pure-data-patches/branch/main/graph/badge.svg)](https://codecov.io/gh/opengeekv2/player-for-web-pure-data-patches)
 ![Psalm coverage](https://shepherd.dev/github/opengeekv2/player-for-web-pure-data-patches/coverage.svg)
 
 ## Included libraries
