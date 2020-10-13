@@ -38,3 +38,21 @@ jobs:
         run: composer normalize --no-update-lock --dry-run --diff
       - if: ${{ matrix.php == '7.2' }}
         run: composer validate --strict
+  node:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node: ['12.x']
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node }}
+      - id: yarn-cache
+        run: echo "::set-output name=dir::$(yarn cache dir)"
+      - uses: actions/cache@v2
+        with:
+          path: ${{ steps.yarn-cache.outputs.dir }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: ${{ runner.os }}-yarn-
+      - run: yarn install --frozen-lockfile
