@@ -50,7 +50,7 @@ This plugin has no upgrades
 
 If you wish to contribute to this plugin you can do it in [GitHub](https://github.com/opengeekv2/player-for-web-pure-data-patches).
 
-If there's any issue or feature that fancies you, you can write a comment in there so you can be assigned to it and we can discuss on how you may approach it.
+Pick any issue or feature that fancies you and then write a comment in there so you can be assigned to it and we can discuss on how you may approach it.
 
 There's a prepared development environment that you can use in [GitHub](https://github.com/opengeekv2/player-for-web-pure-data-patches-dev-env).
 
