@@ -10,10 +10,7 @@
   "dependencies": {
     "webpd": "^0.4.2"
   },
-  "devDependencies": {
-    "gulp": "^4.0.2"
-  },
   "scripts": {
-    "start": "gulp"
+    "start": "cp node_modules/webpd/dist/webpd-latest.min.js dist/js"
   }
 }
