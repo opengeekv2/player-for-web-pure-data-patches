@@ -46,6 +46,9 @@ This plugin has no upgrades
 * Allow .pd files to be uploaded in media.
 * Provide "pd" shortcode.
 
+### 1.0.1
+* Escape URL provided in patch so it is not possible to inject js through that parameter.
+
 ## Contributing
 
 If you wish to contribute to this plugin you can do it in [GitHub](https://github.com/opengeekv2/player-for-web-pure-data-patches).
