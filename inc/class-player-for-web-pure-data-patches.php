@@ -61,7 +61,7 @@ class Player_For_Web_Pure_Data_Patches {
 			$tag
 		);
 
-		$patch = esc_url($pd_atts['patch']);
+		$patch = esc_url( $pd_atts['patch'] );
 
 		wp_enqueue_script( 'webpd' );
 		$output = "<script>window.addEventListener('DOMContentLoaded', function () { fetch('${patch}').then(function (response) { return response.text(); }).then(function (data) { var patch = Pd.loadPatch(data); Pd.start(); }); }, false);</script>";
