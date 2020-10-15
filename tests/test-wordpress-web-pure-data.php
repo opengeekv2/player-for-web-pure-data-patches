@@ -51,4 +51,17 @@ class Player_For_Web_Pure_Data_Patches_Test extends WP_UnitTestCase {
 		$this->assertEquals( $template, $rendered_shortcode );
 	}
 
+	/**
+	 * Test PD shortcode render.
+	 */
+	public function test_render_pd_escape_url() {
+		$url                                  = "https://google.com');alert('hola');fetch('https://localhost:8443/wp-content/uploads/2020/10/main-1.pd";
+		$template                             = "<script>window.addEventListener('DOMContentLoaded', function () { fetch('https://google.com&#039;);alert(&#039;hola&#039;);fetch(&#039;https://localhost:8443/wp-content/uploads/2020/10/main-1.pd').then(function (response) { return response.text(); }).then(function (data) { var patch = Pd.loadPatch(data); Pd.start(); }); }, false);</script>";
+		$player_for_web_web_pure_data_patches = new Player_For_Web_Pure_Data_Patches();
+
+		$rendered_shortcode = $player_for_web_web_pure_data_patches->render_pd_shortcode( array( 'patch' => $url ) );
+
+		$this->assertEquals( $template, $rendered_shortcode );
+	}
+
 }
