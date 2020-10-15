@@ -1,6 +1,6 @@
 {
   "name": "player-for-web-pure-data-patches",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Plugin to upload, show and run Web Pure Data compatible Pure Data programs in WordPress sites.",
   "main": "index.js",
   "repository": "git@github.com:opengeekv2/player-for-web-pure-data-patches.git",
