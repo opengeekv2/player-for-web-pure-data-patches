@@ -44,7 +44,7 @@ class Player_For_Web_Pure_Data_Patches_Test extends WP_UnitTestCase {
 	}
 
 	/**
-	 * Test PD shortcode render.
+	 * Test PD shortcode render escapes url.
 	 */
 	public function test_generate_pd_shortcode_escape_url() {
 		global $wp_scripts;
@@ -57,6 +57,25 @@ class Player_For_Web_Pure_Data_Patches_Test extends WP_UnitTestCase {
 		$this->assertTrue( wp_script_is( 'webpd' ) );
 
 		$this->assertEquals( $template, $wp_scripts->print_inline_script( 'webpd', 'after', false ) );
+	}
+
+	/**
+	 * Test PD shortcode render renders content.
+	 */
+	public function test_generate_pd_shortcode_renders_content() {
+		global $wp_scripts;
+		$wp_scripts                           = new WP_Scripts();
+		$url                                  = "https://google.com');alert('hola');fetch('https://localhost:8443/wp-content/uploads/2020/10/main-1.pd";
+		$template                             = "window.addEventListener('DOMContentLoaded', function () { fetch('https://google.com&#039;);alert(&#039;hola&#039;);fetch(&#039;https://localhost:8443/wp-content/uploads/2020/10/main-1.pd').then(function (response) { return response.text(); }).then(function (data) { var patch = Pd.loadPatch(data); Pd.start(); }); }, false);";
+		$content                              = 'hola';
+		$expected_content                     = '<p>hola</p>' . PHP_EOL;
+		$player_for_web_web_pure_data_patches = new Player_For_Web_Pure_Data_Patches();
+
+		$output = $player_for_web_web_pure_data_patches->render_pd_shortcode( array( 'patch' => $url ), $content );
+		$this->assertTrue( wp_script_is( 'webpd' ) );
+
+		$this->assertEquals( $template, $wp_scripts->print_inline_script( 'webpd', 'after', false ) );
+		$this->assertEquals( $expected_content, $output );
 	}
 
 }

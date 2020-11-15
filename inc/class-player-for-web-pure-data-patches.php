@@ -56,9 +56,8 @@ class Player_For_Web_Pure_Data_Patches {
 		// enclosing tags.
 		if ( ! is_null( $content ) ) {
 			// secure output by executing the_content filter hook on $content.
-			$output .= apply_filters( 'the_content', $content ); // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals
+			$content = apply_filters( 'the_content', $content ); // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals
 
-			// run shortcode parser recursively.
 			$output .= do_shortcode( $content );
 		}
 
