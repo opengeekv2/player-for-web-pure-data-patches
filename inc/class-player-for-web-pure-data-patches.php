@@ -37,7 +37,7 @@ class Player_For_Web_Pure_Data_Patches {
 	}
 
 	/**
-	 * The [pd] shortcode.  Accepts a pd file path and will ru the PureData patch with Web Pure Data.
+	 * The [pd] shortcode.  Accepts a pd file path and will run the PureData patch with Web Pure Data.
 	 *
 	 * @param string[] $atts     Shortcode attributes. Default empty.
 	 * @param string   $content  Shortcode content. Default null.
@@ -46,6 +46,33 @@ class Player_For_Web_Pure_Data_Patches {
 	 * @return string
 	 */
 	public function render_pd_shortcode( $atts = array(), $content = null, $tag = '' ) {
+		$inline_script = $this->generate_webpd_inline_script( $atts, $tag );
+
+		wp_enqueue_script( 'webpd' );
+
+		wp_add_inline_script( 'webpd', $inline_script );
+
+		$output = '';
+		// enclosing tags.
+		if ( ! is_null( $content ) ) {
+			// secure output by executing the_content filter hook on $content.
+			$content = apply_filters( 'the_content', $content ); // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals
+
+			$output .= do_shortcode( $content );
+		}
+
+		return $output;
+	}
+
+	/**
+	 * Gets the pd shortcode parameters and builds the inline script.
+	 *
+	 * @param string[] $atts     Shortcode attributes. Default empty.
+	 * @param string   $tag      Shortcode tag (name). Default empty.
+	 *
+	 * @return string
+	 */
+	private function generate_webpd_inline_script( $atts = array(), $tag = '' ) {
 		$atts = array_change_key_case( (array) $atts, CASE_LOWER );
 
 		/**
@@ -63,19 +90,7 @@ class Player_For_Web_Pure_Data_Patches {
 
 		$patch = esc_url( $pd_atts['patch'] );
 
-		wp_enqueue_script( 'webpd' );
-		$output = "<script>window.addEventListener('DOMContentLoaded', function () { fetch('${patch}').then(function (response) { return response.text(); }).then(function (data) { var patch = Pd.loadPatch(data); Pd.start(); }); }, false);</script>";
-
-		// enclosing tags.
-		if ( ! is_null( $content ) ) {
-			// secure output by executing the_content filter hook on $content.
-			$output .= apply_filters( 'the_content', $content ); // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals
-
-			// run shortcode parser recursively.
-			$output .= do_shortcode( $content );
-		}
-
-		return $output;
+		return "window.addEventListener('DOMContentLoaded', function () { fetch('${patch}').then(function (response) { return response.text(); }).then(function (data) { var patch = Pd.loadPatch(data); Pd.start(); }); }, false);";
 	}
 
 }
