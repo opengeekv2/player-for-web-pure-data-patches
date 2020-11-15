@@ -46,25 +46,34 @@ class Player_For_Web_Pure_Data_Patches {
 	 * @return string
 	 */
 	public function render_pd_shortcode( $atts = array(), $content = null, $tag = '' ) {
-		$output = $this->generate_webpd_inline_script( $atts, $content, $tag );
+		$inline_script = $this->generate_webpd_inline_script( $atts, $tag );
 
 		wp_enqueue_script( 'webpd' );
 
-		wp_add_inline_script( 'webpd', $output );
+		wp_add_inline_script( 'webpd', $inline_script );
 
-		return '';
+		$output = '';
+		// enclosing tags.
+		if ( ! is_null( $content ) ) {
+			// secure output by executing the_content filter hook on $content.
+			$output .= apply_filters( 'the_content', $content ); // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals
+
+			// run shortcode parser recursively.
+			$output .= do_shortcode( $content );
+		}
+
+		return $output;
 	}
 
 	/**
 	 * Gets the pd shortcode parameters and builds the inline script.
 	 *
 	 * @param string[] $atts     Shortcode attributes. Default empty.
-	 * @param string   $content  Shortcode content. Default null.
 	 * @param string   $tag      Shortcode tag (name). Default empty.
 	 *
 	 * @return string
 	 */
-	private function generate_webpd_inline_script( $atts = array(), $content = null, $tag = '' ) {
+	private function generate_webpd_inline_script( $atts = array(), $tag = '' ) {
 		$atts = array_change_key_case( (array) $atts, CASE_LOWER );
 
 		/**
