@@ -11,7 +11,7 @@ jobs:
     continue-on-error: ${{ matrix.allowed_to_fail }}
     strategy:
       matrix:
-        php: ['5.6', '7.2']
+        php: ['7.2']
         allowed_to_fail: [false]
     steps:
       - uses: actions/checkout@v2
@@ -20,24 +20,24 @@ jobs:
           php-version: ${{ matrix.php }}
           coverage: none
           tools: cs2pr,composer:v1
-      - if: ${{ matrix.php == '5.6' }}
-        run: composer global require --dev dealerdirect/phpcodesniffer-composer-installer:^0.6 phpcompatibility/phpcompatibility-wp:* wp-coding-standards/wpcs:* automattic/vipwpcs:* 
-      - if: ${{ matrix.php == '5.6' }}
-        run: phpcs --report=checkstyle -q . | cs2pr
       - if: ${{ matrix.php == '7.2' }}
-        run: composer global require --dev phpstan/phpstan:0.12.47 szepeviktor/phpstan-wordpress:0.6.5 vimeo/psalm:3.16.0 humanmade/psalm-plugin-wordpress:1.0.1 ergebnis/composer-normalize:2.8.2
+        run: mv . ./player-for-web-pure-data-patches
       - if: ${{ matrix.php == '7.2' }}
-        run: composer install
+        run: git clone https://github.com/opengeekv2/player-for-web-pure-data-patches-dev-env.git
       - if: ${{ matrix.php == '7.2' }}
-        run: sed -i "s+vendor/szepeviktor/phpstan-wordpress/extension.neon+$HOME/\.composer/vendor/szepeviktor/phpstan-wordpress/extension.neon+g" phpstan.neon.dist
+        run: mv ./player-for-web-pure-data-patches ./player-for-web-pure-data-patches-dev-env/public/wp-content/plugins/player-for-web-pure-data-patches
+      - if: ${{ matrix.php == '7.2' }}  
+        run: cd ./player-for-web-pure-data-patches-dev-env && composer install
+      - if: ${{ matrix.php == '7.2' }}  
+        run: ./player-for-web-pure-data-patches-dev-env/public/wp-content/plugins/player-for-web-pure-data-patches && composer install
       - if: ${{ matrix.php == '7.2' }}
-        run: phpstan analyze --error-format=checkstyle | cs2pr
+        run: cd ./player-for-web-pure-data-patches-dev-env && phpstan analyze --error-format=checkstyle | cs2pr
       - if: ${{ matrix.php == '7.2' }}
-        run: psalm --stats --threads=$(nproc) --output-format=github --shepherd
+        run: cd ./player-for-web-pure-data-patches-dev-env && psalm --stats --threads=$(nproc) --output-format=github --shepherd
       - if: ${{ matrix.php == '7.2' }}
-        run: composer normalize --no-update-lock --dry-run --diff
+        run: ./player-for-web-pure-data-patches-dev-env/public/wp-content/plugins/player-for-web-pure-data-patches && composer normalize --no-update-lock --dry-run --diff
       - if: ${{ matrix.php == '7.2' }}
-        run: composer validate --strict
+        run: ./player-for-web-pure-data-patches-dev-env/public/wp-content/plugins/player-for-web-pure-data-patches && composer validate --strict
   node:
     runs-on: ubuntu-latest
     strategy:
