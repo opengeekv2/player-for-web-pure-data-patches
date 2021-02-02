@@ -25,7 +25,7 @@ jobs:
       - if: ${{ matrix.php == '5.6' }}
         run: phpcs --report=checkstyle -q . | cs2pr
       - if: ${{ matrix.php == '7.2' }}
-        run: composer global require --dev phpstan/phpstan:* szepeviktor/phpstan-wordpress:* vimeo/psalm:* humanmade/psalm-plugin-wordpress:* ergebnis/composer-normalize
+        run: composer global require --dev phpstan/phpstan:* szepeviktor/phpstan-wordpress:* vimeo/psalm:* humanmade/psalm-plugin-wordpress:1.0.1 ergebnis/composer-normalize
       - if: ${{ matrix.php == '7.2' }}
         run: composer install
       - if: ${{ matrix.php == '7.2' }}
