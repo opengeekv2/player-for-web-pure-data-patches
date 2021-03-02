@@ -32,6 +32,8 @@ jobs:
         run: mkdir ./player-for-web-pure-data-patches-dev-env/public/wp-content/plugins/player-for-web-pure-data-patches
       - if: ${{ matrix.php == '7.4' }}
         run: mv ./player-for-web-pure-data-patches ./player-for-web-pure-data-patches-dev-env/public/wp-content/plugins
+      - if: ${{ matrix.php == '7.4' }} 
+        run: sudo composer self-update --1 && sudo chown $USER $HOME/.composer
       - if: ${{ matrix.php == '7.4' }}  
         run: cd ./player-for-web-pure-data-patches-dev-env && composer install
       - if: ${{ matrix.php == '7.4' }}  
