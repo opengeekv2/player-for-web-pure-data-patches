@@ -23,7 +23,7 @@ jobs:
       - if: ${{ matrix.php == '7.2' }}
         run: mkdir ./player-for-web-pure-data-patches
       - if: ${{ matrix.php == '7.2' }}
-        run: cp -r * ./player-for-web-pure-data-patches
+        run: rsync -av --exclude='./player-for-web-pure-data-patches' . ./player-for-web-pure-data-patches
       - if: ${{ matrix.php == '7.2' }}
         run: git clone https://github.com/opengeekv2/player-for-web-pure-data-patches-dev-env.git
       - if: ${{ matrix.php == '7.2' }}
