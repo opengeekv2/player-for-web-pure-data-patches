@@ -27,6 +27,8 @@ jobs:
       - if: ${{ matrix.php == '7.2' }}
         run: git clone https://github.com/opengeekv2/player-for-web-pure-data-patches-dev-env.git
       - if: ${{ matrix.php == '7.2' }}
+        run: mkdir ./player-for-web-pure-data-patches-dev-env/public/wp-content/plugins/player-for-web-pure-data-patches
+      - if: ${{ matrix.php == '7.2' }}
         run: mv ./player-for-web-pure-data-patches ./player-for-web-pure-data-patches-dev-env/public/wp-content/plugins/player-for-web-pure-data-patches
       - if: ${{ matrix.php == '7.2' }}  
         run: cd ./player-for-web-pure-data-patches-dev-env && composer install
