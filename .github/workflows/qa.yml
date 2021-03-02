@@ -20,29 +20,29 @@ jobs:
           php-version: ${{ matrix.php }}
           coverage: none
           tools: cs2pr,composer:v1
-      - if: ${{ matrix.php == '7.2' }}
+      - if: ${{ matrix.php == '7.3' }}
         run: mkdir ./player-for-web-pure-data-patches
-      - if: ${{ matrix.php == '7.2' }}
+      - if: ${{ matrix.php == '7.3' }}
         run: rsync -av --exclude='./player-for-web-pure-data-patches' . ./player-for-web-pure-data-patches
-      - if: ${{ matrix.php == '7.2' }}
+      - if: ${{ matrix.php == '7.3' }}
         run: git clone https://github.com/opengeekv2/player-for-web-pure-data-patches-dev-env.git
-      - if: ${{ matrix.php == '7.2' }}
+      - if: ${{ matrix.php == '7.3' }}
         run: mkdir ./player-for-web-pure-data-patches-dev-env/public/wp-content/plugins
-      - if: ${{ matrix.php == '7.2' }}
+      - if: ${{ matrix.php == '7.3' }}
         run: mkdir ./player-for-web-pure-data-patches-dev-env/public/wp-content/plugins/player-for-web-pure-data-patches
-      - if: ${{ matrix.php == '7.2' }}
+      - if: ${{ matrix.php == '7.3' }}
         run: mv ./player-for-web-pure-data-patches ./player-for-web-pure-data-patches-dev-env/public/wp-content/plugins/player-for-web-pure-data-patches
-      - if: ${{ matrix.php == '7.2' }}  
+      - if: ${{ matrix.php == '7.3' }}  
         run: cd ./player-for-web-pure-data-patches-dev-env && composer install
-      - if: ${{ matrix.php == '7.2' }}  
+      - if: ${{ matrix.php == '7.3' }}  
         run: ./player-for-web-pure-data-patches-dev-env/public/wp-content/plugins/player-for-web-pure-data-patches && composer install
-      - if: ${{ matrix.php == '7.2' }}
+      - if: ${{ matrix.php == '7.3' }}
         run: cd ./player-for-web-pure-data-patches-dev-env && phpstan analyze --error-format=checkstyle | cs2pr
-      - if: ${{ matrix.php == '7.2' }}
+      - if: ${{ matrix.php == '7.3' }}
         run: cd ./player-for-web-pure-data-patches-dev-env && psalm --stats --threads=$(nproc) --output-format=github --shepherd
-      - if: ${{ matrix.php == '7.2' }}
+      - if: ${{ matrix.php == '7.3' }}
         run: ./player-for-web-pure-data-patches-dev-env/public/wp-content/plugins/player-for-web-pure-data-patches && composer normalize --no-update-lock --dry-run --diff
-      - if: ${{ matrix.php == '7.2' }}
+      - if: ${{ matrix.php == '7.3' }}
         run: ./player-for-web-pure-data-patches-dev-env/public/wp-content/plugins/player-for-web-pure-data-patches && composer validate --strict
   node:
     runs-on: ubuntu-latest
