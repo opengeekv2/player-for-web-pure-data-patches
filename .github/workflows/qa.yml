@@ -2,7 +2,7 @@ name: qa
 
 on:
   push:
-    branches: [main]
+    branches: [mai]
   pull_request:
 
 jobs:
