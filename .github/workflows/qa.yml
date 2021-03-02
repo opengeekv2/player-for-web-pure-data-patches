@@ -37,9 +37,9 @@ jobs:
       - if: ${{ matrix.php == '7.3' }}  
         run: cd ./player-for-web-pure-data-patches-dev-env/public/wp-content/plugins/player-for-web-pure-data-patches && composer install
       - if: ${{ matrix.php == '7.3' }}
-        run: cd ./player-for-web-pure-data-patches-dev-env && phpstan analyze --error-format=checkstyle | cs2pr
+        run: cd ./player-for-web-pure-data-patches-dev-env && vendor/bin/phpstan analyze --error-format=checkstyle | cs2pr
       - if: ${{ matrix.php == '7.3' }}
-        run: cd ./player-for-web-pure-data-patches-dev-env && psalm --stats --threads=$(nproc) --output-format=github --shepherd
+        run: cd ./player-for-web-pure-data-patches-dev-env && vendor/bin/psalm --stats --threads=$(nproc) --output-format=github --shepherd
       - if: ${{ matrix.php == '7.3' }}
         run: cd ./player-for-web-pure-data-patches-dev-env/public/wp-content/plugins/player-for-web-pure-data-patches && composer normalize --no-update-lock --dry-run --diff
       - if: ${{ matrix.php == '7.3' }}
