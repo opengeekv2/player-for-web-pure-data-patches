@@ -33,15 +33,13 @@ jobs:
       - if: ${{ matrix.php == '7.4' }}
         run: mv ./player-for-web-pure-data-patches ./player-for-web-pure-data-patches-dev-env/public/wp-content/plugins
       - if: ${{ matrix.php == '7.4' }} 
-        run: sudo composer self-update --1 && sudo chown $USER $HOME/.composer
+        run: composer -V
       - if: ${{ matrix.php == '7.4' }}  
         run: cd ./player-for-web-pure-data-patches-dev-env && composer install
       - if: ${{ matrix.php == '7.4' }}  
         run: cd ./player-for-web-pure-data-patches-dev-env/public/wp-content/plugins/player-for-web-pure-data-patches && composer install
       - if: ${{ matrix.php == '7.4' }}
         run: cd ./player-for-web-pure-data-patches-dev-env && vendor/bin/phpstan analyze --error-format=checkstyle | cs2pr
-      - if: ${{ matrix.php == '7.4' }}
-        run: cd ./player-for-web-pure-data-patches-dev-env && vendor/bin/psalm-plugin enable humanmade/psalm-plugin-wordpress
       - if: ${{ matrix.php == '7.4' }}
         run: cd ./player-for-web-pure-data-patches-dev-env && vendor/bin/psalm --stats --threads=$(nproc) --output-format=github --shepherd
       - if: ${{ matrix.php == '7.4' }}
