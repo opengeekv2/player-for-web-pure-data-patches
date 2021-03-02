@@ -11,7 +11,7 @@ jobs:
     continue-on-error: ${{ matrix.allowed_to_fail }}
     strategy:
       matrix:
-        php: ['7.2']
+        php: ['7.3']
         allowed_to_fail: [false]
     steps:
       - uses: actions/checkout@v2
