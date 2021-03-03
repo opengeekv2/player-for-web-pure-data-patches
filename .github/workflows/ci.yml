@@ -54,7 +54,7 @@ jobs:
           extensions: dom, curl, libxml, mbstring, zip, pcntl, pdo, sqlite, pdo_sqlite, mysql, mysqli, pdo_mysql, bcmath, soap, intl, gd, exif, iconv, imagick
           tools: composer:v1
       - run: bash bin/install-wp-tests.sh wordpress_test root '' 127.0.0.1:${{ job.services.mysql.ports['3306'] }} ${{ matrix.wp-version }} true
-      - run: composer global require "phpunit/phpunit=4.8.*|5.7.*|7.5.*"
+      - run: composer global require "phpunit/phpunit=4.8.*|5.7.*
       - if: ${{ matrix.php == '7.2' || matrix.php == '7.3' || matrix.php == '7.4' || matrix.php == '8.0' }}
         run: composer install
       - if: ${{ matrix.php == '5.6' || matrix.php == '7.0' || matrix.php == '7.1' }}
