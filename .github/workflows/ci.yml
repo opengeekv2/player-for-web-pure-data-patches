@@ -30,7 +30,7 @@ jobs:
           - php: '7.3'
             wp-version: latest
             allowed_to_fail: false
-          - php: '7.3'
+          - php: '7.4'
             wp-version: latest
             allowed_to_fail: false
           - php: '7.4'
