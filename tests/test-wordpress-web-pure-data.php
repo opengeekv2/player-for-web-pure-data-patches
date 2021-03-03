@@ -19,6 +19,8 @@ class Player_For_Web_Pure_Data_Patches_Test extends WP_UnitTestCase {
 		$mime_types['html']                   = 'text/html';
 		$player_for_web_web_pure_data_patches = new Player_For_Web_Pure_Data_Patches();
 
+		wp_enqueue_scripts();
+
 		$mime_types = $player_for_web_web_pure_data_patches->add_pd_mime_type( $mime_types );
 
 		$this->assertEquals( 'text/html', $mime_types['html'] );
@@ -34,6 +36,8 @@ class Player_For_Web_Pure_Data_Patches_Test extends WP_UnitTestCase {
 		$url                                  = 'https://google.com';
 		$template                             = "window.addEventListener('DOMContentLoaded', function () { fetch('{$url}').then(function (response) { return response.text(); }).then(function (data) { var patch = Pd.loadPatch(data); Pd.start(); }); }, false);";
 		$player_for_web_web_pure_data_patches = new Player_For_Web_Pure_Data_Patches();
+
+		wp_enqueue_scripts();
 
 		$player_for_web_web_pure_data_patches->render_pd_shortcode( array( 'patch' => $url ) );
 
@@ -53,6 +57,8 @@ class Player_For_Web_Pure_Data_Patches_Test extends WP_UnitTestCase {
 		$template                             = "window.addEventListener('DOMContentLoaded', function () { fetch('https://google.com&#039;);alert(&#039;hola&#039;);fetch(&#039;https://localhost:8443/wp-content/uploads/2020/10/main-1.pd').then(function (response) { return response.text(); }).then(function (data) { var patch = Pd.loadPatch(data); Pd.start(); }); }, false);";
 		$player_for_web_web_pure_data_patches = new Player_For_Web_Pure_Data_Patches();
 
+		wp_enqueue_scripts();
+
 		$player_for_web_web_pure_data_patches->render_pd_shortcode( array( 'patch' => $url ) );
 		$this->assertTrue( wp_script_is( 'webpd' ) );
 
@@ -70,6 +76,8 @@ class Player_For_Web_Pure_Data_Patches_Test extends WP_UnitTestCase {
 		$content                              = 'hola';
 		$expected_content                     = '<p>hola</p>' . PHP_EOL;
 		$player_for_web_web_pure_data_patches = new Player_For_Web_Pure_Data_Patches();
+
+		wp_enqueue_scripts();
 
 		$output = $player_for_web_web_pure_data_patches->render_pd_shortcode( array( 'patch' => $url ), $content );
 		$this->assertTrue( wp_script_is( 'webpd' ) );
