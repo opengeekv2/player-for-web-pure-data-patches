@@ -16,16 +16,16 @@ jobs:
         allowed_to_fail: [false]
         include:
           - php: '5.6'
-            wp-version: latest
+            wp-version: '5.2'
             allowed_to_fail: false
           - php: '7.0'
-            wp-version: latest
+            wp-version: '5.3'
             allowed_to_fail: false
           - php: '7.1'
-            wp-version: latest
+            wp-version: '5.4'
             allowed_to_fail: false
           - php: '7.2'
-            wp-version: latest
+            wp-version: '5.5'
             allowed_to_fail: false
           - php: '7.3'
             wp-version: latest
