@@ -2,7 +2,7 @@
 * Contributors: opengeekv2
 * Tags: music, pd, synth, player
 * Requires at least: 5.2
-* Tested up to: 5.5
+* Tested up to: 5.6
 * Stable tag: 1.0.1
 * Requires PHP: 5.6
 * License: LGPLv3 or later

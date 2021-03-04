@@ -12,12 +12,9 @@ jobs:
     strategy:
       matrix:
         php: ['5.6']
-        wp-version: ['trunk']
+        wp-version: ['5.2']
         allowed_to_fail: [false]
         include:
-          - php: '5.6'
-            wp-version: '5.2'
-            allowed_to_fail: false
           - php: '7.0'
             wp-version: '5.3'
             allowed_to_fail: false
