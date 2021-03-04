@@ -11,7 +11,7 @@ jobs:
     continue-on-error: ${{ matrix.allowed_to_fail }}
     strategy:
       matrix:
-        php: ['5.6', '7.2']
+        php: ['7.4']
         allowed_to_fail: [false]
     steps:
       - uses: actions/checkout@v2
@@ -20,24 +20,32 @@ jobs:
           php-version: ${{ matrix.php }}
           coverage: none
           tools: cs2pr,composer:v1
-      - if: ${{ matrix.php == '5.6' }}
-        run: composer global require --dev dealerdirect/phpcodesniffer-composer-installer:^0.6 phpcompatibility/phpcompatibility-wp:* wp-coding-standards/wpcs:* automattic/vipwpcs:* 
-      - if: ${{ matrix.php == '5.6' }}
-        run: phpcs --report=checkstyle -q . | cs2pr
-      - if: ${{ matrix.php == '7.2' }}
-        run: composer global require --dev phpstan/phpstan:* szepeviktor/phpstan-wordpress:* vimeo/psalm:* humanmade/psalm-plugin-wordpress:* ergebnis/composer-normalize
-      - if: ${{ matrix.php == '7.2' }}
-        run: composer install
-      - if: ${{ matrix.php == '7.2' }}
-        run: sed -i "s+vendor/szepeviktor/phpstan-wordpress/extension.neon+$HOME/\.composer/vendor/szepeviktor/phpstan-wordpress/extension.neon+g" phpstan.neon.dist
-      - if: ${{ matrix.php == '7.2' }}
-        run: phpstan analyze --error-format=checkstyle | cs2pr
-      - if: ${{ matrix.php == '7.2' }}
-        run: psalm --stats --threads=$(nproc) --output-format=github --shepherd
-      - if: ${{ matrix.php == '7.2' }}
-        run: composer normalize --no-update-lock --dry-run --diff
-      - if: ${{ matrix.php == '7.2' }}
-        run: composer validate --strict
+      - if: ${{ matrix.php == '7.4' }}
+        run: mkdir ./player-for-web-pure-data-patches
+      - if: ${{ matrix.php == '7.4' }}
+        run: rsync -av --exclude='./player-for-web-pure-data-patches' . ./player-for-web-pure-data-patches
+      - if: ${{ matrix.php == '7.4' }}
+        run: git clone https://github.com/opengeekv2/player-for-web-pure-data-patches-dev-env.git
+      - if: ${{ matrix.php == '7.4' }}
+        run: mkdir ./player-for-web-pure-data-patches-dev-env/public/wp-content/plugins
+      - if: ${{ matrix.php == '7.4' }}
+        run: mkdir ./player-for-web-pure-data-patches-dev-env/public/wp-content/plugins/player-for-web-pure-data-patches
+      - if: ${{ matrix.php == '7.4' }}
+        run: mv ./player-for-web-pure-data-patches ./player-for-web-pure-data-patches-dev-env/public/wp-content/plugins
+      - if: ${{ matrix.php == '7.4' }} 
+        run: composer -V
+      - if: ${{ matrix.php == '7.4' }}  
+        run: cd ./player-for-web-pure-data-patches-dev-env && composer install --classmap-authoritative
+      - if: ${{ matrix.php == '7.4' }}  
+        run: cd ./player-for-web-pure-data-patches-dev-env/public/wp-content/plugins/player-for-web-pure-data-patches && composer install --classmap-authoritative
+      - if: ${{ matrix.php == '7.4' }}
+        run: cd ./player-for-web-pure-data-patches-dev-env && vendor/bin/phpstan analyze --error-format=checkstyle | cs2pr
+      - if: ${{ matrix.php == '7.4' }}
+        run: cd ./player-for-web-pure-data-patches-dev-env && vendor/bin/psalm --stats --threads=$(nproc) --output-format=github --shepherd
+      - if: ${{ matrix.php == '7.4' }}
+        run: cd ./player-for-web-pure-data-patches-dev-env/public/wp-content/plugins/player-for-web-pure-data-patches && composer normalize --no-update-lock --dry-run --diff
+      - if: ${{ matrix.php == '7.4' }}
+        run: cd ./player-for-web-pure-data-patches-dev-env/public/wp-content/plugins/player-for-web-pure-data-patches && composer validate --strict
   node:
     runs-on: ubuntu-latest
     strategy:
