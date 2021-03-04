@@ -18,11 +18,16 @@ class Player_For_Web_Pure_Data_Patches {
 	 * Construct
 	 */
 	public function __construct() {
-		add_action('wp_enqueue_scripts', array($this, 'register_scripts'));
+		add_action( 'wp_enqueue_scripts', array( $this, 'register_scripts' ) );
 		add_filter( 'upload_mimes', array( $this, 'add_pd_mime_type' ) );
 		add_shortcode( 'pd', array( $this, 'render_pd_shortcode' ) );
 	}
 
+	/**
+	 * Registers webpd script for inclusion
+	 *
+	 * @return void
+	 */
 	public function register_scripts() {
 		wp_register_script( 'webpd', plugin_dir_url( __DIR__ ) . 'dist/js/webpd-latest.min.js', array(), '0.3.1', true );
 	}
@@ -60,6 +65,7 @@ class Player_For_Web_Pure_Data_Patches {
 		// enclosing tags.
 		if ( ! is_null( $content ) ) {
 			// secure output by executing the_content filter hook on $content.
+			/** @var string */
 			$content = apply_filters( 'the_content', $content ); // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals
 
 			$output .= do_shortcode( $content );
@@ -77,7 +83,7 @@ class Player_For_Web_Pure_Data_Patches {
 	 * @return string
 	 */
 	private function generate_webpd_inline_script( $atts = array(), $tag = '' ) {
-		$atts = array_change_key_case( (array) $atts, CASE_LOWER );
+		$atts = array_change_key_case( $atts, CASE_LOWER );
 
 		/**
 		 * Varpd_atts type
