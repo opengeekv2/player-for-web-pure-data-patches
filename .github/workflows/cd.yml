@@ -18,6 +18,7 @@ jobs:
       - run: svn checkout https://plugins.svn.wordpress.org/player-for-web-pure-data-patches
       - run: composer install --prefer-dist --classmap-authoritative --no-progress --no-interaction --no-dev
       - run: yarn install
+      - run: mkdir dist
       - run: yarn start
       - run: zip -r player-for-web-pure-data-patches.zip dist inc vendor composer.json LICENSE README.md player-for-web-pure-data-patches.php
       - run: cd player-for-web-pure-data-patches && rm -rf trunk/*
