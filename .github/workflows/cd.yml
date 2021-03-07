@@ -8,9 +8,6 @@ jobs:
   publish:
     runs-on: ubuntu-latest
     steps:
-      - name: Set WordPress plugin publish password
-        env:
-          wordpress_plugin_directory_pass: ${{ secrets.WORDPRES_PLUGIN_DIRTECTORY_PASS }}
       - run: svn checkout https://plugins.svn.wordpress.org/player-for-web-pure-data-patches
       - run: npm install --global yarn
       - run: yarn install
@@ -24,5 +21,7 @@ jobs:
       - run: TAG=`grep -Po '\d*\.\d*\.\d*' player-for-web-pure-data-patches.php 
       - run: cd player-for-web-pure-data-patches && svn copy trunk tags/$TAG
       - run: cd player-for-web-pure-data-patches && svn commit -m "New version $TAG" --username=opengeekv2 --password=$WORDPRES_PLUGIN_DIRTECTORY_PASS
+        env:
+          WORDPRES_PLUGIN_DIRTECTORY_PASS: ${{ secrets.WORDPRES_PLUGIN_DIRTECTORY_PASS }}
 
 
