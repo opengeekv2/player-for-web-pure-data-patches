@@ -22,10 +22,10 @@ jobs:
       - run: yarn start
       - run: zip -r player-for-web-pure-data-patches.zip dist inc vendor composer.json LICENSE README.md player-for-web-pure-data-patches.php
       - run: cd player-for-web-pure-data-patches && rm -rf trunk/*
-      - run: cd player-for-web-pure-data-patches && svn st | grep ! | cut -d! -f2| sed 's/^ *//' | sed 's/^/"/g' | sed 's/$/"/g' | xargs svn rm
-      - run: cd player-for-web-pure-data-patches && svn add `svn status | grep ?`
       - run: unzip player-for-web-pure-data-patches.zip -d player-for-web-pure-data-patches/trunk
       - run: mv player-for-web-pure-data-patches/trunk/README.md player-for-web-pure-data-patches/trunk/README.txt
+      - run: cd player-for-web-pure-data-patches && svn st | grep ! | cut -d! -f2| sed 's/^ *//' | sed 's/^/"/g' | sed 's/$/"/g' | xargs svn rm
+      - run: cd player-for-web-pure-data-patches && svn add `svn status | grep ?`
       - run: TAG=`grep -Po '\d*\.\d*\.\d*' player-for-web-pure-data-patches.php 
       - run: cd player-for-web-pure-data-patches && svn copy trunk tags/$TAG
       - run: cd player-for-web-pure-data-patches && svn commit -m "New version $TAG" --username=opengeekv2 --password=$WORDPRES_PLUGIN_DIRTECTORY_PASS
