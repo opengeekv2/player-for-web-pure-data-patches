@@ -52,6 +52,9 @@ This plugin has no upgrades
 ### 1.0.2
 * Tested up to 5.7
 
+### 1.0.3
+* Check publish workflow
+
 ## Contributing
 
 If you wish to contribute to this plugin you can do it in [GitHub](https://github.com/opengeekv2/player-for-web-pure-data-patches).
