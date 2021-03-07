@@ -26,8 +26,8 @@ jobs:
       - run: cd player-for-web-pure-data-patches && rm -rf trunk/*
       - run: unzip player-for-web-pure-data-patches.zip -d player-for-web-pure-data-patches/trunk
       - run: mv player-for-web-pure-data-patches/trunk/README.md player-for-web-pure-data-patches/trunk/README.txt
-      - run: cd player-for-web-pure-data-patches && svn add --force trunk/* --auto-props --parents --depth infinity -q
       - run: cd player-for-web-pure-data-patches && svn st | grep '^!' | awk '{print $2}' | xargs -r svn delete --force
+      - run: cd player-for-web-pure-data-patches && svn add --force trunk/* --auto-props --parents --depth infinity -q
       - run: cd player-for-web-pure-data-patches && var=$(grep -Po '\d*\.\d*\.\d*' ../player-for-web-pure-data-patches.php) && svn copy trunk tags/$var
       - run: cd player-for-web-pure-data-patches && var=$(grep -Po '\d*\.\d*\.\d*' ../player-for-web-pure-data-patches.php) && svn commit -m "New version $var" --username=opengeekv2 --password=$WORDPRES_PLUGIN_DIRTECTORY_PASS
         env:
