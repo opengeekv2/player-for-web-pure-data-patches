@@ -26,7 +26,7 @@ jobs:
       - run: cd player-for-web-pure-data-patches && rm -rf trunk/*
       - run: unzip player-for-web-pure-data-patches.zip -d player-for-web-pure-data-patches/trunk
       - run: mv player-for-web-pure-data-patches/trunk/README.md player-for-web-pure-data-patches/trunk/README.txt
-      - run: cd player-for-web-pure-data-patches && svn st | grep ! | cut -d! -f2| sed 's/^ *//' | sed 's/^/"/g' | sed 's/$/"/g' | xargs svn rm
+      - run: cd player-for-web-pure-data-patches && svn st | grep '^!' | awk '{print $2}' | xargs svn delete --force
       - run: cd player-for-web-pure-data-patches && svn add --force trunk/* --auto-props --parents --depth infinity -q
       - run: ::set-env TAG=`grep -Po '\d*\.\d*\.\d*' player-for-web-pure-data-patches.php`
       - run: cd player-for-web-pure-data-patches && svn copy trunk tags/$TAG
