@@ -49,6 +49,9 @@ This plugin has no upgrades
 ### 1.0.1
 * Escape URL provided in patch so it is not possible to inject js through that parameter.
 
+### 1.0.2
+* Tested up to 5.7
+
 ## Contributing
 
 If you wish to contribute to this plugin you can do it in [GitHub](https://github.com/opengeekv2/player-for-web-pure-data-patches).
