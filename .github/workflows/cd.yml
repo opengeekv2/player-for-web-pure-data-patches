@@ -14,7 +14,7 @@ jobs:
           coverage: none
           tools: composer:v1
       - run: svn checkout https://plugins.svn.wordpress.org/player-for-web-pure-data-patches
-      - run: composer install -d public/wp-content/plugins/player-for-web-pure-data-patches --prefer-dist --classmap-authoritative --no-progress --no-interaction --no-dev
+      - run: composer install --prefer-dist --classmap-authoritative --no-progress --no-interaction --no-dev
       - run: npm install --global yarn
       - run: yarn install
       - run: yarn start
