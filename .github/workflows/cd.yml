@@ -28,7 +28,7 @@ jobs:
       - run: mv player-for-web-pure-data-patches/trunk/README.md player-for-web-pure-data-patches/trunk/README.txt
       - run: cd player-for-web-pure-data-patches && svn st | grep ! | cut -d! -f2| sed 's/^ *//' | sed 's/^/"/g' | sed 's/$/"/g' | xargs svn rm
       - run: cd player-for-web-pure-data-patches && svn add --force trunk/* --auto-props --parents --depth infinity -q
-      - run: TAG=`grep -Po '\d*\.\d*\.\d*' player-for-web-pure-data-patches.php`
+      - run: ::set-env TAG=`grep -Po '\d*\.\d*\.\d*' player-for-web-pure-data-patches.php`
       - run: cd player-for-web-pure-data-patches && svn copy trunk tags/$TAG
       - run: cd player-for-web-pure-data-patches && svn commit -m "New version $TAG" --username=opengeekv2 --password=$WORDPRES_PLUGIN_DIRTECTORY_PASS
         env:
