@@ -8,7 +8,7 @@
  * Plugin Name:       Player for Web Pure Data patches
  * Plugin URI:        https://github.com/opengeekv2/player-for-web-pure-data-patches
  * Description:       Plugin to upload and run Web Pure Data compatible Pure Data programs in WordPress sites.
- * Version:           1.0.3
+ * Version:           1.0.2
  * Requires at least: 5.2
  * Requires PHP:      5.6
  * Author:            Marc Mauri Alloza
