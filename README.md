@@ -3,7 +3,7 @@
 * Tags: music, pd, synth, player
 * Requires at least: 5.2
 * Tested up to: 5.7
-* Stable tag: 1.0.1
+* Stable tag: 1.0.2
 * Requires PHP: 5.6
 * License: LGPLv3 or later
 * License URI: https://www.gnu.org/licenses/lgpl-3.0.en.html
