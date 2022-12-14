@@ -31,9 +31,9 @@ underscore@^1.4.0:
   integrity sha512-xY96SsN3NA461qIRKZ/+qox37YXPtSBswMGfiNptr+wrt6ds4HaMw23TP612fEyGekRE6LNRiLYr/aqbHXNedw==
 
 waaclock@^0.5.0:
-  version "0.5.3"
-  resolved "https://registry.yarnpkg.com/waaclock/-/waaclock-0.5.3.tgz#4d3dff1b83eb439fb7235df8271b891e2fc5a2db"
-  integrity sha1-TT3/G4PrQ5+3I134JxuJHi/Fots=
+  version "0.5.4"
+  resolved "https://registry.yarnpkg.com/waaclock/-/waaclock-0.5.4.tgz#bf6bfa750b89208e66e4af65d874e9b50b4d04fe"
+  integrity sha512-uKC4793Tgn5WojWE7qvm4ImcPJlIyrLxiZDd3gdRAsEJHluUtCAJMsavR4tFkDa2cRT81jSl5Jk3W254lXe2fw==
 
 waaoffsetnode@^0.1.0:
   version "0.1.3"
